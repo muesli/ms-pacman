@@ -3,9 +3,7 @@ ms-pacman
 
 Handy scripts for Arch Linux users
 
-## Scripts
-
-### Backup scripts
+### Backup Scripts
 
 #### Creating the backup
 
