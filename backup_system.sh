@@ -5,11 +5,17 @@
 #  - Backup home directories
 #
 
-./backup_config.sh
+function helptext {
+	echo "Usage: backup_system.sh OUTPUT_TAR_GZ"
+}
+
+[[ $# -gt 0 ]] || { helptext; exit 1; }
+
+./backup_config.sh backup_config.tar.gz
 ./backup_packagelists.sh
 
 # create master backup archive
-tar -czf backup_system.tar.gz backup_config.tar.gz pkglist-off.txt pkglist-loc.txt
+tar -czf $1 backup_config.tar.gz pkglist-off.txt pkglist-loc.txt
 
 # clean up
 rm backup_config.tar.gz pkglist-off.txt pkglist-loc.txt
